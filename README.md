@@ -9,3 +9,4 @@
 <img width="474" height="565" alt="image" src="https://github.com/user-attachments/assets/31d0bf1b-ec38-4ade-9456-aafc843db9b4" />
 <img width="740" height="997" alt="image" src="https://github.com/user-attachments/assets/f7acc6c9-bf1e-40de-bebb-55e0f048d52c" />
 хз норм не
+мб еще мемчиков кинуть
