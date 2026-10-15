@@ -10,4 +10,7 @@
 <img width="740" height="997" alt="image" src="https://github.com/user-attachments/assets/f7acc6c9-bf1e-40de-bebb-55e0f048d52c" />
 хз норм не
 мб еще мемчиков кинуть
+<img width="474" height="473" alt="image" src="https://github.com/user-attachments/assets/06362915-8a9a-436c-aa32-7960a2746d43" />
+<img width="474" height="473" alt="image" src="https://github.com/user-attachments/assets/4c5c3fac-4d37-4e69-b153-8ac515630dbf" />
+![Uploading image.png…]()
 ![Uploading image.png…]()
