@@ -16,3 +16,4 @@
 <img width="1260" height="1260" alt="image" src="https://github.com/user-attachments/assets/7b8e9813-7a50-4a63-9254-42703904ebfb" />
 ![Uploading image.png…]()
 ![Uploading image.png…]()...
+надо добавить мемчиков
