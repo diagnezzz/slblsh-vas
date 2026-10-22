@@ -19,3 +19,4 @@
 надо добавить мемчиков
 ![Uploading image.png…]()
 
+![Uploading image.png…]()
