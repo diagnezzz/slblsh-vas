@@ -14,6 +14,8 @@
 <img width="474" height="473" alt="image" src="https://github.com/user-attachments/assets/4c5c3fac-4d37-4e69-b153-8ac515630dbf" />
 <img width="203" height="198" alt="image" src="https://github.com/user-attachments/assets/b2ad6e15-86e9-4dc2-8c51-246aad68928c" />
 <img width="1260" height="1260" alt="image" src="https://github.com/user-attachments/assets/7b8e9813-7a50-4a63-9254-42703904ebfb" />
-![Uploading image.png…]()
-![Uploading image.png…]()...
+<img width="1200" height="600" alt="image" src="https://github.com/user-attachments/assets/ee0784fa-c29a-4a4c-bf15-16fa531b8c20" />
+<img width="374" height="374" alt="image" src="https://github.com/user-attachments/assets/eff1466b-30df-480b-97b7-e4ab1f600a1a" />...
 надо добавить мемчиков
+![Uploading image.png…]()
+
