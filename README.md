@@ -21,3 +21,4 @@
 
 ![Uploading image.png…]()
 ![Uploading image.png…]()
+короче так вот делаем делаем
