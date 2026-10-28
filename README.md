@@ -1,4 +1,5 @@
 #drun.com
+
 я веду этот репозиторий. Не обращайте внимание на рид ми это для оценки 
 
 <img width="659" height="609" alt="image" src="https://github.com/user-attachments/assets/f9f26d3d-ef49-49fb-8e3e-7c8d184b5ce8" />
