@@ -10,6 +10,9 @@ goods = {}
 
 
 def add(items, title, amount, expiration_date=None):
+    if Decimal(str(amount)) <= 0:
+        print('Количество должно быть больше нуля')
+        return
     # Если срок годности указан, преобразуем строку в дату.
     if expiration_date is not None:
         expiration_date = datetime.strptime(
@@ -30,6 +33,9 @@ def add(items, title, amount, expiration_date=None):
 def add_by_note(items, note):
     # Разбиваем запись на отдельные слова.
     parts = note.split()
+    if not parts:
+        print('Введите название и количество продукта')
+        return
     expiration_date = None
 
     # Проверяем, похожа ли последняя часть на дату ГГГГ-ММ-ДД.
@@ -37,7 +43,10 @@ def add_by_note(items, note):
         # Забираем дату и удаляем её из списка.
         expiration_date = parts.pop()
 
-    # После удаления даты последняя часть — количество продукта.
+    if len(parts) < 2:
+        print('Нужно указать название и количество')
+        return
+
     amount = Decimal(parts.pop())
 
     # Оставшиеся слова составляют название продукта.
@@ -92,3 +101,12 @@ def get_expired(items, in_advance_days=0):
             result.append((title, total))
 
     return result
+add(goods, 'Молоко', 2, '2026-01-01')
+add_by_note(goods, 'Молоко 1')
+
+print('Поиск:', find(goods, 'мол'))
+print('Количество:', get_amount(goods, 'молоко'))
+print('Проверка сроков:', get_expired(goods))
+
+add_by_note(goods, '')
+add(goods, 'Соль', -1)
