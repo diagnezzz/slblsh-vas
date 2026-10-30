@@ -25,3 +25,22 @@
 короче так вот делаем делаем
 льльлььльллььлл
 ьшоьь
+print('Поиск:', find(goods, 'мол'))
+print('Поиск заглавными:', find(goods, 'МОЛ'))
+print('Количество:', get_amount(goods, 'молоко'))
+print('Несуществующий продукт:', find(goods, 'абракадабра'))
+print('Проверка сроков:', get_expired(goods))
+
+
+if not parts:
+    print('Введите название и количество продукта')
+    return
+if len(parts) < 2:
+    print('Нужно указать название и количество')
+    return
+
+
+
+if Decimal(str(amount)) <= 0:
+    print('Количество должно быть больше нуля')
+    return
