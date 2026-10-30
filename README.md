@@ -25,3 +25,12 @@
 короче так вот делаем делаем
 льльлььльллььлл
 ьшоьь
+add(goods, 'Молоко', 2, '2026-01-01')
+add_by_note(goods, 'Молоко 1')
+
+print('Поиск:', find(goods, 'мол'))
+print('Количество:', get_amount(goods, 'молоко'))
+print('Проверка сроков:', get_expired(goods))
+
+add_by_note(goods, '')
+add(goods, 'Соль', -1)
