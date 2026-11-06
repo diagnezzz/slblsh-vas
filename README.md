@@ -29,3 +29,34 @@
 
 кйцфнруцеуццр
 ацауцауцацуеццуеецуецуеце
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ book.title }}</title>
+</head>
+<body>
+    <h1>{{ book.title }}</h1>
+    <p>Автор: {{ book.author }}</p>
+    <p>Год издания: {{ book.year }}</p>
+    <p>{{ book.description }}</p>
+</body>
+</html>
+
+from django.shortcuts import render
+
+
+def book_detail(request):
+    book = {
+        "title": "Капитанская дочка",
+        "author": "Александр Пушкин",
+        "year": 1836,
+        "description": "История Петра Гринёва и Маши Мироновой.",
+    }
+
+urlpatterns = [
+    path("admin/", admin.site.urls),
+    path("book/", views.book_detail, name="book_detail"),
+]
+
+    return render(request, "catalog/book_detail.html", {"book": book})
