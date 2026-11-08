@@ -30,4 +30,5 @@
 кйцфнруцеуццр
 ацауцауцацуеццуеецуецуеце
 
-    return render(request, "catalog/book_detail.html", {"book": book})
+
+4ецецуцек
