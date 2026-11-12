@@ -1,0 +1,11 @@
+<h3>{{ pokemon.name }}</h3>
+{% if pokemon.image %}<img width="96" height="96" src="{{ pokemon.image }}" alt="{{ pokemon.name }}">{% endif %}
+<p>Тип: {{ pokemon.types }}</p>
+<p>Вес: {{ pokemon.weight }} кг · Рост: {{ pokemon.height }} м</p>
+<p>Способности: {{ pokemon.abilities }}</p>
+<details>
+    <summary>Характеристики</summary>
+    <ul>
+        {% for stat, value in pokemon.stats.items %}<li>{{ stat }}: {{ value }}</li>{% endfor %}
+    </ul>
+</details>

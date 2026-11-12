@@ -1,0 +1,53 @@
+{% extends 'practices/base.html' %}
+{% block title %}Команда покемонов{% endblock %}
+{% block content %}
+<h1>Команда покемонов</h1>
+<form method="get">
+    <label for="name">Имя покемона на английском</label>
+    <input id="name" name="name" value="{{ name }}" placeholder="pikachu" required>
+    <button>Найти</button>
+</form>
+{% if error %}<p class="notice" role="alert">{{ error }}</p>{% endif %}
+{% if found %}
+<article>
+    <h2>Результат поиска</h2>
+    {% include 'practices/pokemon_card.html' with pokemon=found %}
+    <form method="post" action="{% url 'add_pokemon' %}">
+        {# Защитный токен нужен Django для отправки POST-формы. #}
+        {% csrf_token %}
+        <input type="hidden" name="name" value="{{ found.name }}">
+        <button>Добавить в команду</button>
+    </form>
+</article>
+{% endif %}
+<h2>Моя команда</h2>
+<div class="cards">
+    {% for pokemon in team %}
+    <article>
+        {% include 'practices/pokemon_card.html' %}
+        <form method="post" action="{% url 'remove_pokemon' %}">
+            {% csrf_token %}
+            <input type="hidden" name="name" value="{{ pokemon.name }}">
+            <button>Удалить</button>
+        </form>
+    </article>
+    {% empty %}<p>Команда пустая. Найдите покемона и добавьте его.</p>{% endfor %}
+</div>
+<h2>Тренировочный бой</h2>
+<p>Первым ходит более быстрый. Урон = атака − половина защиты соперника (минимум 1).
+Побеждает тот, кто первым уменьшит здоровье соперника до нуля. При равной скорости первым ходит первый выбранный покемон.</p>
+{% if team|length >= 2 %}
+<form method="post" action="{% url 'battle' %}">
+    {% csrf_token %}
+    <label for="first">Первый покемон</label>
+    <select id="first" name="first">{% for pokemon in team %}<option>{{ pokemon.name }}</option>{% endfor %}</select>
+    <label for="second">Второй покемон</label>
+    <select id="second" name="second">{% for pokemon in team %}<option {% if forloop.counter == 2 %}selected{% endif %}>{{ pokemon.name }}</option>{% endfor %}</select>
+    <button>Начать бой</button>
+</form>
+{% else %}<p>Добавьте хотя бы двух покемонов.</p>{% endif %}
+{% if battle %}
+<h3>Победитель: {{ battle.winner }}</h3>
+<ol>{% for line in battle.log %}<li>{{ line }}</li>{% endfor %}</ol>
+{% endif %}
+{% endblock %}

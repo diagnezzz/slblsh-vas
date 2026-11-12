@@ -1,0 +1,25 @@
+{% extends 'practices/base.html' %}
+{% block title %}Фотографии собак{% endblock %}
+{% block content %}
+<h1>Фотографии собак</h1>
+<form method="get">
+    <label for="breeds">Породы через запятую (на английском)</label>
+    <input id="breeds" name="breeds" value="{{ text }}" placeholder="african, chow, dingo" required>
+    <button>Показать фотографии</button>
+</form>
+{% for error in errors %}<p class="notice" role="alert">{{ error }}</p>{% endfor %}
+<div class="cards">
+    {# Цикл создаёт отдельную карточку для каждой полученной фотографии. #}
+    {% for image in images %}
+    <article>
+        <h2>{{ image.breed }}</h2>
+        <img class="dog" src="{{ image.url }}" alt="Собака породы {{ image.breed }}">
+    </article>
+    {% endfor %}
+</div>
+<h2>Все породы</h2>
+<ul class="breeds">
+    {% for number, breed in breeds %}<li>{{ number }}. {{ breed }}</li>
+    {% empty %}<li>Список пока недоступен.</li>{% endfor %}
+</ul>
+{% endblock %}
