@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Практика 2 — фотографии собак</title>
+    <style>
+        body { font: 17px/1.5 Arial, sans-serif; background: #f3f5f8; color: #203047; margin: 0; }
+        main { max-width: 1000px; margin: auto; padding: 24px; }
+        label { display: block; }
+        input, button { font: inherit; padding: 10px; margin: 8px 0; box-sizing: border-box; max-width: 100%; }
+        input { width: 360px; }
+        button { background: #164b9a; color: white; border: 0; border-radius: 5px; cursor: pointer; }
+        .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); gap: 18px; }
+        article { background: white; padding: 18px; border-radius: 8px; }
+        img { width: 100%; height: 250px; object-fit: contain; }
+        .error { background: #fff1cf; padding: 10px; }
+        .breeds { columns: 3 180px; list-style: none; padding: 0; }
+    </style>
+</head>
+<body>
+<main>
+    <h1>Практика 2 — фотографии собак</h1>
+    <form method="get">
+        <label for="breeds">Введите породы через запятую на английском</label>
+        <input id="breeds" name="breeds" value="{{ text }}" placeholder="african, chow, dingo" required>
+        <button>Показать фотографии</button>
+    </form>
+
+    {% for error in errors %}<p class="error" role="alert">{{ error }}</p>{% endfor %}
+
+    <div class="cards">
+        {# Повторяем карточку для каждой фотографии из views.py. #}
+        {% for image in images %}
+        <article>
+            <h2>{{ image.breed }}</h2>
+            <img src="{{ image.url }}" alt="Собака породы {{ image.breed }}">
+        </article>
+        {% endfor %}
+    </div>
+
+    <h2>Все породы</h2>
+    <ul class="breeds">
+        {% for number, breed in breeds %}<li>{{ number }}. {{ breed }}</li>
+        {% empty %}<li>Список пока недоступен.</li>{% endfor %}
+    </ul>
+</main>
+</body>
+</html>
