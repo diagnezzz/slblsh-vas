@@ -101,6 +101,26 @@ def get_expired(items, in_advance_days=0):
             result.append((title, total))
 
     return result
+def group_products(items):
+    groups = {
+        'Молочка': [],
+        'Выпечка': [],
+        'Другое': []
+    }
+
+    for title in items:
+        name = title.lower()
+
+        if name in ['молоко', 'сыр', 'кефир', 'творог', 'йогурт', 'сметана']:
+            groups['Молочка'].append(title)
+
+        elif name in ['хлеб', 'батон', 'булочка', 'пирог', 'печенье']:
+            groups['Выпечка'].append(title)
+
+        else:
+            groups['Другое'].append(title)
+
+    return groups
 add(goods, 'Молоко', 2, '2026-01-01')
 add_by_note(goods, 'Молоко 1')
 
@@ -110,3 +130,5 @@ print('Проверка сроков:', get_expired(goods))
 
 add_by_note(goods, '')
 add(goods, 'Соль', -1)
+add(goods, 'Хлеб', 1)
+print('Группы:',group_products(goods))
