@@ -32,3 +32,23 @@
 
 пыпыпыпы
 4ецецуцекndkdksnsjkdoxk
+def group_products(items):
+    groups = {
+        'Молочка': [],
+        'Выпечка': [],
+        'Другое': []
+    }
+
+    for title in items:
+        name = title.lower()
+
+        if name in ['молоко', 'сыр', 'кефир', 'творог', 'йогурт', 'сметана']:
+            groups['Молочка'].append(title)
+
+        elif name in ['хлеб', 'батон', 'булочка', 'пирог', 'печенье']:
+            groups['Выпечка'].append(title)
+
+        else:
+            groups['Другое'].append(title)
+
+    return groups
